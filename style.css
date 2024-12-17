@@ -232,11 +232,7 @@ hr {
 }
 
 .hero__heading span {
-    /* background: #ad5389; */
-    /* background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
-    background: linear-gradient(to right, #3c1053, #ad5389); */
     background: #ECB176;
-    /* background: -webkit-linear-gradient(90deg, hsla(26, 43%, 26%, 1) 0%, hsla(28, 25%, 37%, 1) 66%, hsla(29, 23%, 38%, 1) 100%); */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -246,9 +242,6 @@ hr {
 
 .hero__description {
     font-size: 60px;
-    /* background: #c31432; */
-    /* background: -webkit-linear-gradient(to right, #c31432, #240b36);
-    background: linear-gradient(to right, #c31432, #240b36); */
     background: #A67B5B;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -283,7 +276,7 @@ hr {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 60vh;
+    height: 100%;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -390,7 +383,7 @@ hr {
         justify-content: center;
         width: 100%;
         margin: 0 auto;
-        height: 70vh;
+        /* height: 70vh; */
     }
 
     .main__img--container {
@@ -480,7 +473,7 @@ hr {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     margin-bottom: 5rem;
-    font-size: 3.4rem;
+    font-size: 3rem;
 }
 
 .projects__wrapper {
