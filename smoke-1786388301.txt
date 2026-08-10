@@ -1,0 +1,2 @@
+AI assistant live smoke test (1786388301)
+This branch is removed by the smoke script.
