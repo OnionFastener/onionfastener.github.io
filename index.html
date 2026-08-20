@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Owen Song is a UBC Statistics student focused on data analytics, databases, and applied AI.">
     <title>Owen Song's Website</title>
     <link rel = "stylesheet" href = "style.css">
 
@@ -17,12 +18,12 @@
     <nav class="navbar">
         <div class="navbar__container">
             <a href="#home" id="navbar__logo">OWEN SONG</a>
-            <div class="navbar__toggle" id="mobile-menu">
+            <button class="navbar__toggle" id="mobile-menu" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="navbar__menu">
+            </button>
+            <ul class="navbar__menu" id="primary-navigation">
                 <li class="navbar__item">
                     <a href="#home" class="navbar__links" id="home-page">Home</a>
                 </li>
@@ -33,7 +34,7 @@
                     <a href="#projects" class="navbar__links" id="projects-page">Projects</a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="https://linkedin.com/in/owen-song" class="button" id="connect-page" target="_blank">Connect</a>
+                    <a href="#connect" class="button" id="connect-page">Connect</a>
                 </li>
             </ul>
         </div>
@@ -46,15 +47,9 @@
             <p class="hero__description">Statistics student focused on data analytics, data systems, and AI-driven tools.</p>
             <p class="hero__focus">Currently exploring analytics, databases, and applied AI.</p>
             <div class="hero__actions">
-                <button class="main__btn">
-                    <a href="#about">More about me</a>
-                </button>
-                <button class="main__btn main__btn--secondary">
-                    <a href="assets/owen_song_resume.pdf" target="_blank">View resume</a>
-                </button>
-                <button class="main__btn main__btn--secondary">
-                    <a href="#connect">Contact me</a>
-                </button>
+                <a class="main__btn" href="#about">More about me</a>
+                <a class="main__btn main__btn--secondary" href="assets/owen_song_resume.pdf" target="_blank" rel="noopener noreferrer">View résumé</a>
+                <a class="main__btn main__btn--secondary" href="#connect">Contact me</a>
             </div>
         </div>
      </div>
@@ -67,16 +62,14 @@
         <div class="main__container">
             <div class="main__img--container">
                 <div class="main__img--card">
-                    <img src="/photos/me,silly.jpg">
+                    <img src="photos/me,silly.jpg" alt="Owen Song smiling outdoors">
                 </div>
             </div>
             <div class="main__content">
                 <h1>About Me</h1>
                 <h2>I like using data to understand problems and build better tools.</h2>
                 <p>I'm a Statistics student at UBC focused on data analytics, databases, and AI applications. Software development is still part of how I work, but my main interest is turning data into clear insight and practical systems.</p>
-                <button class="main__btn">
-                    <a href="#projects">See what I'm working on</a>
-                </button>
+                <a class="main__btn" href="#projects">See what I'm working on</a>
             </div>
         </div>
       </div>
@@ -88,37 +81,41 @@
         <h1>Selected Projects</h1>
         <div class="projects__wrapper">
             <div class="projects__card">
-                <h2>Wordle Clone</h2>
-                <p>Play a copy of New York Times Famous Game</p>
+                <span class="projects__badge">Featured</span>
+                <h2>AI Work Triage Assistant</h2>
+                <p>Reviews Jira tickets and GitHub issues, drafts code changes, and waits for human approval before taking action.</p>
+                <p class="projects__stack">Python · FastAPI · Docker · AI agents</p>
                 <div class="projects__btn">
-                    <a href="https://onionfastener.github.io/wordle-clone" target="_blank">
-                        <button>Try it out!</button>
-                    </a>
+                    <a href="https://onionfastener.duckdns.org/project2" target="_blank" rel="noopener noreferrer">Live demo</a>
+                    <a class="projects__source" href="https://github.com/OnionFastener/ai-assistant" target="_blank" rel="noopener noreferrer">Source</a>
                 </div>
             </div>
             <div class="projects__card">
-                <h2>My Website!</h2>
-                <p>You're looking at it right now</p>
+                <span class="projects__badge">Featured</span>
+                <h2>Fill Up Canada</h2>
+                <p>Plans Canadian road trips around vehicle range, fuel cost, live station data, and practical rest stops.</p>
+                <p class="projects__stack">JavaScript · OpenStreetMap · Google Places</p>
                 <div class="projects__btn">
-                    <a href="https://github.com/OnionFastener/onionfastener.github.io" target="_blank">
-                        <button>See the behind the scenes</button>
-                    </a>
+                    <a href="https://onionfastener.duckdns.org/project1" target="_blank" rel="noopener noreferrer">Live demo</a>
+                    <a class="projects__source" href="https://github.com/OnionFastener/gasgasgas" target="_blank" rel="noopener noreferrer">Source</a>
                 </div>
             </div>
             <div class="projects__card">
-                <h2>Peak Project</h2>
-                <p>A little app to help climbers keep track of their climbs, indoor and outdoor</p>
+                <span class="projects__badge projects__badge--progress">In development</span>
+                <h2>Meeting Minutes AI</h2>
+                <p>An AI-assisted workflow for turning meetings into clear summaries, decisions, and actionable follow-ups.</p>
+                <p class="projects__stack">Applied AI · Workflow automation</p>
                 <div class="projects__btn">
-                    <a href="https://github.com/OnionFastener/Peak-Progress" target="_blank">
-                        <button>Check out the Github</button>
-                    </a>
+                    <span class="projects__status">Case study coming soon</span>
                 </div>
             </div>
             <div class="projects__card">
-                <h2>Ten Word Test</h2>
-                <p>My version of a 10 word typing test</p>
+                <span class="projects__badge projects__badge--progress">In development</span>
+                <h2>Book Recommender</h2>
+                <p>A machine-learning recommender designed to surface relevant books from reader preferences and title data.</p>
+                <p class="projects__stack">Machine learning · Recommendation systems</p>
                 <div class="projects__btn">
-                    <button>Coming Soon</button>
+                    <span class="projects__status">Case study coming soon</span>
                 </div>
             </div>
         </div>
@@ -127,23 +124,17 @@
        <hr>
 
        <!-- connect -->
-       <div class="main" id="connect">
-        <div class="main__container">
-            <div class="main__content">
-                <h1>Chat with me</h1>
-                <h2>There's plenty of ways to reach me!</h2>
-                <p>Here's one of them</p>
-                <button class="main__btn">
-                    <a href="https://www.linkedin.com/in/owen-song-93a088302" target="_blank">Click Me!</a>
-                </button>
+       <section class="contact" id="connect" aria-labelledby="contact-heading">
+            <p class="contact__eyebrow">Get in touch</p>
+            <h2 id="contact-heading">Let’s build something useful.</h2>
+            <p>Find my work, connect with me, or take a look at my experience.</p>
+            <div class="contact__links">
+                <a class="main__btn" href="mailto:owensong.ca@gmail.com">Email me</a>
+                <a class="main__btn main__btn--secondary" href="https://www.linkedin.com/in/owen-song-93a088302/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="main__btn main__btn--secondary" href="https://github.com/OnionFastener" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="main__btn main__btn--secondary" href="assets/owen_song_resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a>
             </div>
-            <div class="main__img--container">
-                <div class="main__img--card" id="card-2">
-                    <i class="fa-solid fa-computer"></i>
-                </div>
-            </div>
-        </div>
-      </div>
+       </section>
 
       <!-- footer -->
        <div class="footer__container">
@@ -154,10 +145,16 @@
                     </div>
                     <!-- <p class="website__rights">rights not reserved</p> -->
                     <div class="social__icons">
-                        <a href="https://www.instagram.com/pocket_bread/" class="social__icon--link" target="_blank">
+                        <a href="mailto:owensong.ca@gmail.com" class="social__icon--link" aria-label="Email Owen Song">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/OnionFastener" class="social__icon--link" target="_blank" rel="noopener noreferrer" aria-label="Owen Song on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pocket_bread/" class="social__icon--link" target="_blank" rel="noopener noreferrer" aria-label="Owen Song on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/owen-song-93a088302/" class="social__icon--link" target="_blank">
+                        <a href="https://www.linkedin.com/in/owen-song-93a088302/" class="social__icon--link" target="_blank" rel="noopener noreferrer" aria-label="Owen Song on LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </div>

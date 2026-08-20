@@ -595,6 +595,293 @@ hr::after {
     }
 }
 
+/* Layout, accessibility, and compact contact refinements */
+html,
+body {
+    overflow-x: hidden;
+}
+
+.navbar__toggle {
+    display: none;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+}
+
+.hero {
+    padding: 110px 0 90px;
+}
+
+.main,
+.projects {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.main__btn {
+    display: inline-block;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.main__btn--secondary {
+    color: var(--teal);
+}
+
+.main__btn:hover {
+    color: var(--cream);
+}
+
+/* Anchor buttons use direct states; the original overlay expected nested links. */
+.main__btn::after {
+    display: none;
+}
+
+.main__btn:hover {
+    color: var(--cream);
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.main__btn--secondary:hover {
+    color: var(--cream);
+    background: var(--teal);
+}
+
+.main__btn:focus-visible,
+.projects__btn a:focus-visible,
+.button:focus-visible,
+.navbar__links:focus-visible,
+.social__icon--link:focus-visible,
+.navbar__toggle:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 4px;
+}
+
+.projects__btn a {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects__btn a:hover {
+    background: #c94f36;
+    transform: translateY(-2px);
+}
+
+.projects__btn .projects__source {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(36, 59, 83, 0.45);
+}
+
+.projects__btn .projects__source:hover {
+    background: var(--navy);
+}
+
+.projects {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.projects__wrapper {
+    width: 100%;
+    max-width: 1280px;
+    justify-items: center;
+}
+
+.projects__btn a,
+.projects__status {
+    padding: 14px 24px;
+    border-radius: 4px;
+    color: var(--white);
+    background: var(--coral);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.contact {
+    padding: 7rem 1.5rem;
+    text-align: center;
+    background: var(--cream);
+}
+
+.contact__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--teal);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.contact h2 {
+    color: var(--navy);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.contact > p:not(.contact__eyebrow) {
+    max-width: 580px;
+    margin: 1.25rem auto 0;
+    color: var(--text);
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.contact__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.social__icons {
+    width: auto;
+    gap: 0.35rem;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        height: 80px;
+        padding: 8px 12px;
+    }
+
+    .navbar__container {
+        width: 100%;
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    #navbar__logo {
+        max-width: calc(100% - 52px);
+        font-size: 1.35rem;
+    }
+
+    #mobile-menu {
+        right: 16px;
+    }
+
+    .navbar__menu.active {
+        left: 0;
+        right: 0;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .button {
+        height: 56px;
+    }
+
+    .hero {
+        padding: 72px 0 64px;
+    }
+
+    .hero__container {
+        min-height: auto;
+        padding: 24px 18px;
+        transform: none;
+    }
+
+    .hero__heading {
+        font-size: clamp(3rem, 16vw, 4rem);
+    }
+
+    .hero__actions,
+    .contact__links {
+        align-items: stretch;
+        flex-direction: column;
+        width: min(100%, 320px);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero__actions .main__btn,
+    .contact__links .main__btn {
+        width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .main {
+        padding: 5rem 0;
+    }
+
+    .main__container {
+        padding: 0 20px;
+    }
+
+    .main__img--card {
+        width: min(100%, 340px);
+        height: auto;
+        margin: 0;
+        aspect-ratio: 1;
+    }
+
+    .projects {
+        padding: 5rem 1rem;
+    }
+
+    .projects h1 {
+        margin-bottom: 3rem;
+        font-size: 2.35rem;
+        text-align: center;
+    }
+
+    .projects__card {
+        width: min(100%, 340px);
+        height: 360px;
+        margin: 8px 0;
+    }
+
+    .projects__card:hover {
+        transform: none;
+    }
+
+    .contact {
+        padding: 5rem 1.25rem;
+    }
+}
+
+/* Match project actions to the site's primary and secondary pill buttons. */
+.projects__btn a {
+    padding: 10px 18px;
+    border: 3px solid var(--navy);
+    border-radius: 999px;
+    color: var(--navy);
+    background: var(--warm-sand);
+    font-weight: 700;
+    line-height: 1.2;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects__btn a:hover {
+    color: var(--cream);
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.projects__btn .projects__source {
+    border-color: var(--mint);
+    color: var(--mint);
+    background: transparent;
+}
+
+.projects__btn .projects__source:hover {
+    color: var(--navy);
+    background: var(--mint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 
 /* projects */
 .projects {
@@ -637,6 +924,8 @@ hr::after {
         radial-gradient(circle at 20% 18%, rgba(191, 231, 221, 0.75), transparent 34%),
         linear-gradient(135deg, #1F8F83 0%, #243B53 100%);
     transition: 0.3s ease-in;
+    position: relative;
+    padding: 2rem 1.25rem;
 }
 
 .projects__card p {
@@ -674,6 +963,8 @@ hr::after {
 .projects__btn {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 16px;
 }
 
@@ -791,4 +1082,131 @@ hr::after {
         padding: 10px;
         width: 100%;
     }
+}
+
+.projects__badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    color: var(--navy);
+    background: var(--mint);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
+.projects__badge--progress {
+    color: var(--navy);
+    background: var(--warm-sand);
+}
+
+.projects__card .projects__stack {
+    margin: 0.25rem 0 0;
+    color: var(--mint);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Final responsive overrides */
+.projects {
+    padding: 7rem 1.5rem;
+}
+
+.projects__wrapper {
+    width: 100%;
+    max-width: 1280px;
+    justify-items: center;
+}
+
+.projects__btn a,
+.projects__status {
+    padding: 14px 24px;
+    border-radius: 4px;
+    color: var(--white);
+    background: var(--coral);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.social__icons {
+    width: auto;
+    gap: 0.35rem;
+}
+
+@media screen and (max-width: 600px) {
+    .hero__heading,
+    .hero__description,
+    .hero__focus,
+    .main__content h2,
+    .main__content p,
+    .projects h1 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .hero__heading {
+        font-size: 3rem;
+    }
+
+    .navbar__toggle {
+        right: 12px !important;
+    }
+
+    .projects {
+        padding: 5rem 1rem;
+    }
+
+    .projects h1 {
+        margin-bottom: 3rem;
+        font-size: 2.35rem;
+        text-align: center;
+    }
+
+    .projects__wrapper {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .projects__card {
+        width: min(100%, 340px);
+        height: 360px;
+        margin: 8px 0;
+    }
+
+    .projects__card:hover {
+        transform: none;
+    }
+}
+
+/* Final project action states */
+.projects__btn a {
+    padding: 10px 18px;
+    border: 3px solid var(--navy);
+    border-radius: 999px;
+    color: var(--navy);
+    background: var(--warm-sand);
+    font-weight: 700;
+    line-height: 1.2;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects__btn a:hover {
+    color: var(--cream);
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.projects__btn .projects__source {
+    border-color: var(--mint);
+    color: var(--mint);
+    background: transparent;
+}
+
+.projects__btn .projects__source:hover {
+    color: var(--navy);
+    background: var(--mint);
 }
